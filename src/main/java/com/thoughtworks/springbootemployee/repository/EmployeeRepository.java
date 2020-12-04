@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface EmployeeRepository extends MongoRepository<Employee,String> {
+public interface EmployeeRepository extends MongoRepository<Employee, String> {
     List<Employee> findAllByGender(String gender);
 }

@@ -36,7 +36,7 @@ public class CompanyService {
     }
 
     public Company update(String companyId, Company updateCompany) {
-        if (companyRepository.existsById(companyId)){
+        if (companyRepository.existsById(companyId)) {
             updateCompany.setId(companyId);
             return companyRepository.save(updateCompany);
         }

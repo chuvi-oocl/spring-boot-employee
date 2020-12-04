@@ -28,7 +28,7 @@ public class EmployeeIntegrationTest {
     private EmployeeRepository employeeRepository;
 
     @AfterEach
-    void tearDown(){
+    void tearDown() {
         employeeRepository.deleteAll();
     }
 
@@ -82,7 +82,7 @@ public class EmployeeIntegrationTest {
         Employee employee = employeeRepository.save(new Employee("Victor", 18, 1000, "male"));
         //when
         //then
-        mockMvc.perform(MockMvcRequestBuilders.get("/employees/"+employee.getId()))
+        mockMvc.perform(MockMvcRequestBuilders.get("/employees/" + employee.getId()))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("id").isString())
                 .andExpect(jsonPath("name").value("Victor"))
@@ -97,7 +97,7 @@ public class EmployeeIntegrationTest {
         //given
         //when
         //then
-        mockMvc.perform(MockMvcRequestBuilders.get("/employees/"+"6fc9d0e060e64c0326fd2e92"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/employees/" + "6fc9d0e060e64c0326fd2e92"))
                 .andExpect(status().isNotFound());
     }
 

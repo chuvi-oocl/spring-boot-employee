@@ -9,12 +9,13 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    public Employee add(Employee requestEmployee){
+    public Employee add(Employee requestEmployee) {
         return employeeRepository.save(requestEmployee);
     }
 
@@ -43,7 +44,7 @@ public class EmployeeService {
         return employeeRepository.findAllByGender(gender);
     }
 
-    public Page<Employee> getAllByPage(int page, int pageSize){
+    public Page<Employee> getAllByPage(int page, int pageSize) {
         return employeeRepository.findAll(PageRequest.of(page - 1, pageSize));
     }
 }

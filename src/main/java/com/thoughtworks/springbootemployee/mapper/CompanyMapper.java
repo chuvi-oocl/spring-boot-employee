@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CompanyMapper {
-    public Company toEntity(CompanyRequest companyRequest){
+    public Company toEntity(CompanyRequest companyRequest) {
         Company company = new Company();
 
         company.setName(companyRequest.getName());
@@ -17,7 +17,7 @@ public class CompanyMapper {
         return company;
     }
 
-    public CompanyResponse toResponse(Company company){
+    public CompanyResponse toResponse(Company company) {
         CompanyResponse companyResponse = new CompanyResponse();
 
         companyResponse.setId(company.getId());
